@@ -37,6 +37,7 @@ public class ProductController {
     @GetMapping(path = "/testmerge")
     public void testMerge(){
         System.out.println("yyyyyyyyyy");
+        System.out.println("xxxxxxxxxxxx");
     }
 
 }
