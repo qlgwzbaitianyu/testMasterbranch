@@ -14,11 +14,6 @@ public class ProductController {
     @Autowired
     ProductService service;
 
-    @GetMapping(path = "/testmerge")
-    public void testMerge(){
-        System.out.println("yyyyyyyyyy");
-    }
-    
     @PostMapping(path = "/add")
     public Product addProduct(@RequestBody Product product){
         return service.addProduct(product);
@@ -39,5 +34,9 @@ public class ProductController {
         return service.findProductByname(name);
     }
 
+    @GetMapping(path = "/testmerge")
+    public void testMerge(){
+        System.out.println("yyyyyyyyyy");
+    }
 
 }
