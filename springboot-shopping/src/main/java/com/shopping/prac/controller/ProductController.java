@@ -34,5 +34,9 @@ public class ProductController {
         return service.findProductByname(name);
     }
 
+    @GetMapping(path = "/testmerge")
+    public void testMerge(){
+        System.out.println("xxxxxxxxxxxx");
+    }
 
 }
