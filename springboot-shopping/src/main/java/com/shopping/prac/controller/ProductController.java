@@ -19,7 +19,7 @@ public class ProductController {
         return service.addProduct(product);
     }
 
-    @GetMapping
+    @GetMapping(value = "/all")
     public List<Product> getAllProduct(){
         return service.findAllProducts();
     }

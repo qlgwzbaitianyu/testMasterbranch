@@ -3,9 +3,11 @@ package com.shopping.prac.service;
 import com.shopping.prac.repository.ProductRepo;
 import com.shopping.prac.shoppingbeans.Product;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ProductServiceImpl implements ProductService{
     @Autowired
     ProductRepo productrepo;
@@ -17,7 +19,7 @@ public class ProductServiceImpl implements ProductService{
 
     @Override
     public List<Product> findProductByname(String name) {
-        return productrepo.findProductsByProduct_name(name);
+        return productrepo.findProductsByProductName(name);
     }
 
     @Override

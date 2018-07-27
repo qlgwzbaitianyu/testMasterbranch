@@ -7,29 +7,32 @@ import javax.persistence.Id;
 public class Product {
 
     @Id
-    private int product_id;
+    private int productId;
 
-    private String product_name;
+    private String productName;
 
-
-    public Product(int product_id, String product_name) {
-        this.product_id = product_id;
-        this.product_name = product_name;
+    public Product(){
+        super();
     }
 
-    public int getProduct_id() {
-        return product_id;
+    public Product(int productId, String productName) {
+        this.productId = productId;
+        this.productName = productName;
     }
 
-    public void setProduct_id(int product_id) {
-        this.product_id = product_id;
+    public int getProductId() {
+        return productId;
     }
 
-    public String getProduct_name() {
-        return product_name;
+    public void setProductId(int productId) {
+        this.productId = productId;
     }
 
-    public void setProduct_name(String product_name) {
-        this.product_name = product_name;
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 }
