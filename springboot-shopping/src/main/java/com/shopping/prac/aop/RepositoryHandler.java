@@ -10,12 +10,12 @@ public class RepositoryHandler {
 
     @HandleBeforeCreate(Product.class)
     public void afterGet(Product product){
-        System.out.println("!!!! this is from repository event handler " + product.getProductName());
+        System.out.println("!!!! this is from repository event handler before create " + product.getProductName());
     }
 
     @HandleBeforeDelete(Product.class)
     public void afterdelete(Product product){
-        System.out.println("!!!! this is from repository event handler " + product.getProductName());
+        System.out.println("!!!! this is from repository event handler before delete" + product.getProductName());
     }
 
 

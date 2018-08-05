@@ -32,6 +32,7 @@ public class ProductController {
     }
 
     @GetMapping
+
     public List<Product> getProductByName(@RequestParam(value = "productName") String name){
         return service.findProductByname(name);
     }
