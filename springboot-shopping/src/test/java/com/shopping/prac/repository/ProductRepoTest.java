@@ -1,6 +1,7 @@
 package com.shopping.prac.repository;
 
 import com.shopping.prac.shoppingbeans.Product;
+import org.hibernate.criterion.Restrictions;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,8 +11,8 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.sql.DataSource;
-import java.util.List;
-import java.util.NoSuchElementException;
+import java.math.BigInteger;
+import java.util.*;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest // will roll back the data
@@ -52,5 +53,45 @@ public class ProductRepoTest {
         productRepo.deleteById(1);
         productRepo.findById(1).get();
     }
+
+    @Test
+    public void coreJavaTest() {
+        Integer a = 123;
+        String str = a.toString();
+        str.length();
+        List<Product> mylist = new LinkedList();
+
+        mylist.stream().filter(x -> {
+            if(x.getProductId() > 0){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }).forEach(x -> x.getProductName());
+
+        Assert.assertTrue(1 == 1);
+
+
+        Stack s = new Stack();
+        String myStr = "aa";
+        myStr.toCharArray();
+
+        char x = (char)(-1 + 90);
+
+
+
+        /*List list2 = new ArrayList();
+        list.stream().forEach(
+                c -> list2.add(c)
+        );
+*/
+        Set<String> myset = new HashSet<>();
+
+
+
+
+    }
+
 
 }

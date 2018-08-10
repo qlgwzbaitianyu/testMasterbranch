@@ -1,5 +1,7 @@
 package com.shopping.prac.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.shopping.prac.service.ProductService;
 import com.shopping.prac.shoppingbeans.Product;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,9 +40,17 @@ public class ProductController {
     }
 
     @GetMapping(path = "/testmerge")
-    public void testMerge(){
-        System.out.println("yyyyyyyyyy");
-        System.out.println("xxxxxxxxxxxx");
+    public ResponseEntity<Product> testMerge(){
+        Product p = new Product(3, "superBug");
+        ObjectMapper objectMapper = new ObjectMapper();
+        String jsonProduct = "";
+        try {
+            jsonProduct = objectMapper.writeValueAsString(p);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(p);
     }
 
     @RequestMapping(path = "/{id}", method = RequestMethod.DELETE)

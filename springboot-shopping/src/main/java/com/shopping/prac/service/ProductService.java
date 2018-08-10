@@ -9,16 +9,34 @@ import java.util.List;
 
 public interface ProductService {
 
-    public Product findProductByid(int id);
+
+    Product findProductByid(int id);
 
 
-    public List<Product>  findProductByname(String name);
+    List<Product>  findProductByname(String name);
 
 
-    public List<Product> findAllProducts();
+    List<Product> findAllProducts();
 
 
-    public Product addProduct(Product product);
+    Product addProduct(Product product);
+
+
+    /**
+     * to get product from UserMicroService
+     * @param name
+     * @return product Object from UserMicroservice
+     */
+    Product getProductFromUserService(String name);
+
+    /**
+     * to do unit test on void return value
+      * @param a
+     * @param b
+     */
+    void aPlusB(int a, int b);
+
+
 
     void deleteProductById(int id);
 }
