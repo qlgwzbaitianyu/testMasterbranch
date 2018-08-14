@@ -2,6 +2,7 @@ package com.shopping.prac.shoppingbeans;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.shopping.prac.configuration.ProductSerializer;
+import org.springframework.hateoas.ResourceSupport;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -9,7 +10,7 @@ import java.util.Objects;
 
 @Entity
 @JsonSerialize(using = ProductSerializer.class)
-public class Product {
+public class Product extends ResourceSupport {
 
     @Id
     private int productId;

@@ -4,9 +4,12 @@ import com.shopping.prac.repository.ProductRepo;
 import com.shopping.prac.shoppingbeans.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import org.springframework.data.domain.Pageable;
 import java.util.List;
 
 @Service
@@ -46,6 +49,16 @@ public class ProductServiceImpl implements ProductService{
     }
 
     /**
+     * pagination practice
+     * @param pageable
+     * @return
+     */
+    @Override
+    public Page<Product> findProductByNameWithPagination(Pageable pageable){
+        return productrepo.findAll(pageable);
+    }
+
+    /**
      * to get product from UserMicroService
      * @param name
      * @return product Object from UserMicroservice
@@ -63,4 +76,6 @@ public class ProductServiceImpl implements ProductService{
     public void aPlusB(int a, int b) {
         int c = a + b;
     }
+
+
 }
